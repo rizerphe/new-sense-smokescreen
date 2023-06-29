@@ -1,0 +1,14 @@
+@keyframes fadeInAnimation
+  0%
+    opacity: 0
+    transform: translateY(1rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+@mixin fadeIn($time, $delay)
+  opacity: 0
+  animation: fadeInAnimation ease $time
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  animation-delay: $delay

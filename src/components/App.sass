@@ -1,17 +1,4 @@
-@keyframes fadeInAnimation
-  0%
-    opacity: 0
-    transform: translateY(1rem)
-  100%
-    opacity: 1
-    transform: translateY(0)
-
-@mixin fadeIn($time, $delay)
-  opacity: 0
-  animation: fadeInAnimation ease $time
-  animation-iteration-count: 1
-  animation-fill-mode: forwards
-  animation-delay: $delay
+@import "./common.sass"
 
 @keyframes letterSpacingAnimation
   0%
@@ -21,20 +8,16 @@
 
 
 .news
-  @include fadeIn(2s, 0s)
+  @include fadeIn(0s, 0s)
 
 .biases
-  @include fadeIn(2s, 1s)
+  @include fadeIn(0s, 0s)
 
 .cta-block
   @include fadeIn(1s, 1.5s)
 
 .about
   @include fadeIn(1s, 1.75s)
-
-.news-block
-  @include fadeIn(2s, 0s)
-
 
 .keyword
   color: transparent

@@ -1,6 +1,7 @@
 "use client";
 import { Flow_Block, Montserrat } from "next/font/google";
 import { useState } from "react";
+import styles from "./NewsBlock.module.sass";
 
 const font = Flow_Block({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
@@ -8,7 +9,7 @@ const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
 export default function NewsBlock({ full = true }: { full?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className={`${font.className} flex flex-col gap-4`}>
+    <div className={`${font.className} ${styles.block} flex flex-col gap-4`}>
       <div
         className={`text-lg font-bold ${
           full ? "text-gray-800" : " text-gray-500"
