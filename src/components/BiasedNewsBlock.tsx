@@ -90,14 +90,15 @@ function Chat({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-xl bg-gray-200">
       <div className="flex flex-col w-full">
-        {messages.map((message) => (
+        {messages.map((message, i) => (
           <div
             className={`flex flex-col gap-2 p-4 text-sm text-gray-600 ${
               message.is_ai ? "bg-gray-200" : "bg-gray-100"
             } ${message.is_ai ? font.className : montserrat.className}`}
+            key={i}
           >
-            {message.text.map((line) => (
-              <div>{line}</div>
+            {message.text.map((line, j) => (
+              <div key={j}>{line}</div>
             ))}
           </div>
         ))}
