@@ -42,7 +42,7 @@ export default function BetaVersionDownload() {
           />
           <button
             className="flex flex-row items-center gap-1 w-1/2 p-2 border border-gray-400 whitespace-nowrap min-w-fit hover:bg-gray-100 rounded-md"
-            onClick={joinWaitlist}
+            onClick={() => joinWaitlist(email, useCase)}
           >
             Приєднатися до списку очікування <MdNavigateNext />
           </button>
