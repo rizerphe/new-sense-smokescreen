@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     if (existing.exists()) {
       return NextResponse.json(
         { error: "Email already on waitlist" },
-        { status: 400 }
+        { status: 409 }
       );
     }
     const record = {
