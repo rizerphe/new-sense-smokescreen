@@ -49,8 +49,13 @@ export default function BetaVersionDownload() {
 
   return (
     <div className="flex flex-col gap-8 items-center justify-center h-full">
-      <div className="text-4xl font-bold">Ми в рамках бета-тестування</div>
-      <div className="text-sm w-1/2">
+      <div className="text-4xl p-4 font-bold text-center">
+        Ми в рамках бета-тестування
+      </div>
+      <div
+        className="text-sm p-4 w-1/2"
+        style={{ minWidth: "min(100vw, 160rem)" }}
+      >
         Ми вже майже готові до публічного запуску, а поки що ви можете
         приєднатися до списку очікування - ми повідомимо вас, як тільки ви
         отримаєте доступ до нашого сервісу.
@@ -65,9 +70,9 @@ export default function BetaVersionDownload() {
           value={useCase}
           onChange={(e) => setUseCase(e.target.value)}
         />
-        <div className="w-full m-2 gap-4 flex flex-row items-center justify-center">
+        <div className="w-full m-2 gap-4 flex flex-col sm:flex-row items-center justify-center">
           <input
-            className={`w-1/2 p-2 border rounded-md ${
+            className={`w-full min-w-[10rem] p-2 border rounded-md ${
               emailFieldHasError ? "border-red-400" : "border-gray-400"
             }`}
             type="email"
@@ -76,7 +81,7 @@ export default function BetaVersionDownload() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <button
-            className="flex flex-row items-center gap-1 w-1/2 p-2 border border-gray-400 whitespace-nowrap min-w-fit hover:bg-gray-100 rounded-md"
+            className="flex flex-row items-center gap-1 w-full p-2 border border-gray-400 whitespace-nowrap min-w-fit hover:bg-gray-100 rounded-md"
             onClick={() => joinWaitlist(email, useCase)}
           >
             Приєднатися до списку очікування <MdNavigateNext />
