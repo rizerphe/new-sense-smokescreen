@@ -88,7 +88,7 @@ function Chat({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className={`rounded-xl${messages.length ? " bg-gray-100" : ""}`}>
+    <div className={`rounded-xl overflow-hidden${messages.length ? " bg-gray-100" : ""}`}>
       <div className="flex flex-col w-full">
         {messages.map((message, i) => (
           <div

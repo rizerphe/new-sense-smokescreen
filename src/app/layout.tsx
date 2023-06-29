@@ -1,5 +1,6 @@
 import "../app/globals.css";
 import Navbar from "../components/navbar";
+import Footer from "../components/Footer";
 import { Montserrat } from "next/font/google";
 
 const font = Montserrat({ subsets: ["latin", "cyrillic"] });
@@ -17,8 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Navbar />
-        {children}
+        <div className="root">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
