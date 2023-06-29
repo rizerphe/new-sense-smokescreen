@@ -20,9 +20,6 @@ export default function Navbar() {
       <a href="/about" className="text-gray-400 m-2 ml-auto text-lg font-bold">
         Про нас
       </a>
-      <a href="/download" className="text-gray-400 m-2 text-lg font-bold">
-        Завантажити
-      </a>
     </div>
   );
 }
