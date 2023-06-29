@@ -145,6 +145,13 @@ export default function NewsBlock({
   const [collapsed, setCollapsed] = useState(init_collapsed);
   const full = _full && !collapsed;
 
+  let percentages = [
+    Math.random() + 0.2,
+    Math.random() + 0.2,
+    Math.random() + 0.2,
+  ];
+  percentages = percentages.map((x) => x / percentages.reduce((a, b) => a + b));
+
   return (
     <div
       className={`${font.className} ${styles.block} flex flex-col gap-4 p-4 ${
@@ -171,25 +178,28 @@ export default function NewsBlock({
         )}
         <div className="flex flex-row items-center gap-0 rounded overflow-hidden w-full">
           <div
-            className={`w-[10%] text-sm font-bold text-gray-600 flex justify-center bg-green-400${
+            className={`text-sm font-bold text-gray-600 flex justify-center bg-green-400${
               full ? "" : " h-1"
             }`}
+            style={{ width: `${percentages[0] * 100}%` }}
           >
-            {full && "10%"}
+            {full && Math.round(percentages[0] * 100) + "%"}
           </div>
           <div
-            className={`w-[35%] text-sm font-bold text-gray-600 flex justify-center bg-yellow-400${
+            className={`text-sm font-bold text-gray-600 flex justify-center bg-yellow-400${
               full ? "" : " h-1"
             }`}
+            style={{ width: `${percentages[1] * 100}%` }}
           >
-            {full && "35%"}
+            {full && Math.round(percentages[1] * 100) + "%"}
           </div>
           <div
-            className={`w-[55%] text-sm font-bold text-gray-600 flex justify-center bg-red-400${
+            className={`text-sm font-bold text-gray-600 flex justify-center bg-red-400${
               full ? "" : " h-1"
             }`}
+            style={{ width: `${percentages[2] * 100}%` }}
           >
-            {full && "55%"}
+            {full && Math.round(percentages[2] * 100) + "%"}
           </div>
         </div>
       </div>
