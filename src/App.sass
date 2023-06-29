@@ -20,6 +20,28 @@
   .news-block-content
     color: #666666
 
+@keyframes fadeInAnimation
+  0%
+    opacity: 0
+    transform: translateY(1rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+@mixin fadeIn($time, $delay)
+  opacity: 0
+  animation: fadeInAnimation ease $time
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  animation-delay: $delay
+
+
+.news
+  @include fadeIn(2s, 0s)
+
+.biases
+  @include fadeIn(2s, 1s)
+
 
 .keyword
   background-image: linear-gradient(90deg, rgba(129,0,103,1) 0%, rgba(9,9,121,1) 35%, rgba(0,100,120,1) 100%)
