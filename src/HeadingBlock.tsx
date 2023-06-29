@@ -6,7 +6,7 @@ export default function HeadingBlock({
   title: string;
 }) {
   return (
-    <div className="w-full flex flex-col items-center justify-between gap-8">
+    <div className="flex flex-1 flex-col items-center justify-between gap-8">
       <span className="text-6xl font-bold">{intro}</span>
       <span className="text-6xl font-bold keyword">{title}</span>
     </div>
