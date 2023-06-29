@@ -3,9 +3,9 @@ export default function CTABlock() {
     <div className="cta-block w-full py-8 flex flex-col items-center justify-center">
       <a
         className="button py-3 px-6 bg-purple-800 text-white text-bold text-2xl rounded-md"
-        href="/signup"
+        href="/download"
       >
-        Зареєструватися
+        Завантажити
       </a>
     </div>
   );
