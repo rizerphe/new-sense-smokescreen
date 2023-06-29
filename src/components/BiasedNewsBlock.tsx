@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./NewsBlock.module.sass";
 import { IoMdSend } from "react-icons/io";
 import { MdNavigateNext } from "react-icons/md";
+import Link from "next/link";
 
 const font = Flow_Block({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
@@ -88,7 +89,11 @@ function Chat({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <div className={`rounded-xl overflow-hidden${messages.length ? " bg-gray-100" : ""}`}>
+    <div
+      className={`rounded-xl overflow-hidden${
+        messages.length ? " bg-gray-100" : ""
+      }`}
+    >
       <div className="flex flex-col w-full">
         {messages.map((message, i) => (
           <div
@@ -206,12 +211,12 @@ export default function NewsBlock({
       {full && (
         <Chat>
           <div>
-            <a
+            <Link
               className="button text-gray-400 text-bold text-lg rounded-md w-min whitespace-nowrap cursor-pointer flex flex-row items-center"
               href="/about"
             >
               Читати повністю <MdNavigateNext className="text-2xl" />
-            </a>
+            </Link>
             {!expanded && (
               <span
                 className="button text-gray-400 text-bold text-lg rounded-md w-min whitespace-nowrap cursor-pointer flex flex-row items-center"

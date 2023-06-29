@@ -17,9 +17,12 @@ export default function Navbar() {
         />
         <span className="text-white text-2xl font-bold">NewSense</span>
       </Link>
-      <a href="/about" className="text-gray-400 m-2 ml-auto text-lg font-bold">
+      <Link
+        href="/about"
+        className="text-gray-400 m-2 ml-auto text-lg font-bold"
+      >
         Про нас
-      </a>
+      </Link>
     </div>
   );
 }

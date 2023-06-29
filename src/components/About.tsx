@@ -1,12 +1,14 @@
+import Link from "next/link";
+
 function LearnMore() {
   return (
     <div className="w-full px-4 flex flex-col items-start justify-center">
-      <a
+      <Link
         className="button py-3 px-6 bg-gray-800 text-white text-bold text-2xl rounded-md"
         href="/about"
       >
         Дізнатися більше
-      </a>
+      </Link>
     </div>
   );
 }
