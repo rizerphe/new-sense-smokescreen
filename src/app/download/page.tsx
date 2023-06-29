@@ -6,7 +6,7 @@ export default function BetaVersionDownload() {
   const [email, setEmail] = useState("");
   const [useCase, setUseCase] = useState("");
 
-  const joinWaitlist = (email: string, useCase: string) => {
+  const joinWaitlist = async (email: string, useCase: string) => {
     await fetch("/joinWaitlist", {
       method: "POST",
       headers: {

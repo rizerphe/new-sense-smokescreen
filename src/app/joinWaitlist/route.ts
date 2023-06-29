@@ -7,11 +7,13 @@ const serviceAccount = {
   client_email: process.env.FIREBASE_CLIENT_EMAIL,
 };
 
-const app = admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount as any),
-  databaseURL:
-    "https://newsense-2c524-default-rtdb.europe-west1.firebasedatabase.app",
-});
+const app = admin.apps.length
+  ? admin.app()
+  : admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount as any),
+      databaseURL:
+        "https://newsense-2c524-default-rtdb.europe-west1.firebasedatabase.app",
+    });
 const database = admin.database(app);
 
 function validateEmail(email: string) {
