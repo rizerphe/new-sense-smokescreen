@@ -6,8 +6,10 @@ export default function Bias() {
     <div className="biases w-full p-4 flex flex-col md:flex-row-reverse flex-wrap items-center gap-4">
       <HeadingBlock intro="Протистій" title="упередженням." />
       <div className="flex flex-1 flex-column min-w-[50vw] p-4">
-        <div className="flex flex-col items-left gap-4 p-4 border-2 rounded">
+        <div className="flex flex-col items-left border-2 rounded">
+          <NewsBlock collapsed />
           <NewsBlock />
+          <NewsBlock collapsed />
         </div>
       </div>
     </div>
