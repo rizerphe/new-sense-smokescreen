@@ -1,6 +1,6 @@
-export default function NewsBlock() {
+export default function NewsBlock({ className }: { className?: string }) {
   return (
-    <div className="news-block">
+    <div className={`news-block ${className}`}>
       <div className="news-block-title">News Title</div>
       <div className="news-block-content">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
