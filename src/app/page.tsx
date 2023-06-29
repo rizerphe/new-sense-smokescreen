@@ -1,5 +1,5 @@
 //import "../components/App.sass";
-import Navbar from "../components/navbar";
+import "../components/App.sass";
 import News from "../components/news";
 import Bias from "../components/bias";
 import CTABlock from "../components/CTA";
@@ -9,7 +9,6 @@ import About from "../components/About";
 export default function HomePage() {
   return (
     <>
-      <Navbar />
       <News />
       <Bias />
       <CTABlock />

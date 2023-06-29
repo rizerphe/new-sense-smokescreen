@@ -1,18 +1,23 @@
+"use client";
+import { Flow_Block, Montserrat } from "next/font/google";
 import { useState } from "react";
+
+const font = Flow_Block({ subsets: ["latin"], weight: "400" });
+const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
 
 export default function NewsBlock({ full = true }: { full?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   return (
-    <div className="news-block">
+    <div className={`${font.className} flex flex-col gap-4`}>
       <div
-        className={`news-block-title${
+        className={`text-lg font-bold ${
           full ? "text-gray-800" : " text-gray-500"
         }`}
       >
         News Title
       </div>
       <div
-        className={`bias-block flex flex-col ${
+        className={`${montserrat.className} flex flex-col ${
           full ? "p-3 w-full" : "w-1/2"
         } items-start gap-2 bg-gray-100 rounded`}
       >
@@ -45,7 +50,7 @@ export default function NewsBlock({ full = true }: { full?: boolean }) {
           </div>
         </div>
       </div>
-      <div className="news-block-content">
+      <div className="text-gray-400">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae,
         dolore quis. Obcaecati mollitia ducimus accusamus alias aut atque beatae
         possimus facere, veniam voluptate qui laudantium sunt harum aperiam,

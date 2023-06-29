@@ -1,0 +1,64 @@
+@keyframes fadeInAnimation
+  0%
+    opacity: 0
+    transform: translateY(1rem)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+@mixin fadeIn($time, $delay)
+  opacity: 0
+  animation: fadeInAnimation ease $time
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  animation-delay: $delay
+
+@keyframes letterSpacingAnimation
+  0%
+    letter-spacing: 0.5rem
+  100%
+    letter-spacing: 0
+
+
+.news
+  @include fadeIn(2s, 0s)
+
+.biases
+  @include fadeIn(2s, 1s)
+
+.cta-block
+  @include fadeIn(1s, 1.5s)
+
+.about
+  @include fadeIn(1s, 1.75s)
+
+.news-block
+  @include fadeIn(2s, 0s)
+
+
+.keyword
+  color: transparent
+  position: relative
+  overflow: visible
+  .keyword-spacer
+    padding: 1rem
+  .keyword-content
+    position: absolute
+    padding: 1rem
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    height: fit-content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background-image: linear-gradient(90deg, rgba(129,0,103,1) 0%, rgba(9,9,121,1) 35%, rgba(0,100,120,1) 100%)
+    -webkit-background-clip: text
+    animation: letterSpacingAnimation 2s ease
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    overflow: visible
+
+.button
+  font-family: 'M PLUS Rounded 1c', sans-serif

@@ -1,7 +1,8 @@
-import "./globals.css";
-import { Inter } from "next/font/google";
+import "../app/globals.css";
+import Navbar from "../components/navbar";
+import { Montserrat } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Montserrat({ subsets: ["latin", "cyrillic"] });
 
 export const metadata = {
   title: "NewSense",
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
