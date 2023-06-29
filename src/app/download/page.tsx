@@ -12,7 +12,7 @@ export default function BetaVersionDownload() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, useCase }),
+      body: JSON.stringify({ email, reason: useCase }),
     });
   };
 
