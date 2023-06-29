@@ -13,7 +13,7 @@ function LearnMore() {
 
 export default function About() {
   return (
-    <div className="w-full flex flex-col justify-start items-start px-8 py-16 gap-8">
+    <div className="about w-full flex flex-col justify-start items-start px-8 py-16 gap-8">
       <span className="text-4xl font-bold">Про нас</span>
       <p className="text-lg">
         NewSense - комплексний новинний агрегатор, що допомагає вам залишатися в
