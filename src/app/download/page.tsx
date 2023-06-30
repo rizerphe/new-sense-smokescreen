@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import app from "../../components/firebase";
 import "../../components/App.sass";
 
 export default function BetaVersionDownload() {
@@ -18,14 +20,23 @@ export default function BetaVersionDownload() {
   const joinWaitlist = async (email: string, useCase: string) => {
     if (!email) {
       setEmailFieldHasError(true);
+      const analytics = getAnalytics(app);
+      logEvent(analytics, "join_waitlist", { success: false, error: "email" });
       return;
     }
     if (!useCase) {
       setUseCaseFieldHasError(true);
+      const analytics = getAnalytics(app);
+      logEvent(analytics, "join_waitlist", {
+        success: false,
+        error: "useCase",
+      });
       return;
     }
     if (!validateEmail(email)) {
       setEmailFieldHasError(true);
+      const analytics = getAnalytics(app);
+      logEvent(analytics, "join_waitlist", { success: false, error: "email" });
       return;
     }
     setEmailFieldHasError(false);
@@ -39,12 +50,18 @@ export default function BetaVersionDownload() {
     });
     if (result.status === 200) {
       setMessage("Вітаємо! Ви успішно приєдналися до списку очікування.");
+      const analytics = getAnalytics(app);
+      logEvent(analytics, "join_waitlist", { success: true });
     }
     if (result.status === 409) {
       setMessage("Ви вже приєдналися до списку очікування.");
+      const analytics = getAnalytics(app);
+      logEvent(analytics, "join_waitlist", { success: false, error: "409" });
     }
     if (result.status === 400) {
       setMessage("Ви ввели некоректний email або ви вказали причину.");
+      const analytics = getAnalytics(app);
+      logEvent(analytics, "join_waitlist", { success: false, error: "400" });
     }
   };
 
@@ -57,9 +74,9 @@ export default function BetaVersionDownload() {
         className="text-sm p-4 w-1/2"
         style={{ minWidth: "min(100vw, 60rem)" }}
       >
-        Вже майже готові до публічного запуску, а поки що ви можете
-        приєднатися до списку очікування - ми повідомимо вас, як тільки ви
-        отримаєте доступ до нашого сервісу.
+        Вже майже готові до публічного запуску, а поки що ви можете приєднатися
+        до списку очікування - ми повідомимо вас, як тільки ви отримаєте доступ
+        до нашого сервісу.
       </div>
       <div className="flex flex-col gap-0 items-center justify-center">
         <input

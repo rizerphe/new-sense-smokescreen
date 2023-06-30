@@ -5,6 +5,8 @@ import styles from "./NewsBlock.module.sass";
 import { IoMdSend } from "react-icons/io";
 import { MdNavigateNext } from "react-icons/md";
 import Link from "next/link";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import app from "./firebase";
 
 const font = Flow_Block({ subsets: ["latin"], weight: "400" });
 const montserrat = Montserrat({ subsets: ["latin", "cyrillic"] });
@@ -86,6 +88,11 @@ function Chat({ children }: { children: React.ReactNode }) {
         setAllowTyping(true);
       }
     }, 50);
+    const analytics = getAnalytics(app);
+    logEvent(analytics, "chat_message_sent", {
+      message: typedMessage,
+      previous_messages: messages.map((x) => x.text.join(" ")).join(" "),
+    });
   };
 
   return (
@@ -235,7 +242,11 @@ export default function NewsBlock({
             {!expanded && (
               <span
                 className="button text-gray-400 text-bold text-lg rounded-md w-min whitespace-nowrap cursor-pointer flex flex-row items-center"
-                onClick={() => setExpanded(!expanded)}
+                onClick={() => {
+                  setExpanded(!expanded);
+                  const analytics = getAnalytics(app);
+                  logEvent(analytics, "expanded");
+                }}
               >
                 Інші джерела <MdNavigateNext className="text-2xl" />
               </span>
