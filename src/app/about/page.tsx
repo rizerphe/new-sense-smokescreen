@@ -1,8 +1,9 @@
 import CTABlock from "@/components/CTA";
+import "../../components/App.sass";
 
 export default function AboutUsPage() {
   return (
-    <div className="flex flex-col justify-start items-start p-8 gap-4">
+    <div className="about-page flex flex-col justify-start items-start p-8 gap-4">
       <span className="text-4xl font-bold text-gray-800">Про Нас</span>
       <p className="text-lg">
         Вітаємо в <strong>NewSense</strong>, де ми пропонуємо вам

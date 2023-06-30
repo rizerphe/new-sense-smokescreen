@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
+import "../../components/App.sass";
 
 export default function BetaVersionDownload() {
   const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ export default function BetaVersionDownload() {
   };
 
   return (
-    <div className="flex flex-col gap-8 items-center justify-center h-full">
+    <div className="download-page flex flex-col gap-8 items-center justify-center h-full">
       <div className="text-4xl p-4 font-bold text-center">
         Ми в рамках бета-тестування
       </div>
