@@ -51,13 +51,13 @@ export default function BetaVersionDownload() {
   return (
     <div className="download-page flex flex-col gap-8 items-center justify-center h-full">
       <div className="text-4xl p-4 font-bold text-center">
-        Ми в рамках бета-тестування
+        Ми ще в бета-версії
       </div>
       <div
         className="text-sm p-4 w-1/2"
-        style={{ minWidth: "min(100vw, 160rem)" }}
+        style={{ minWidth: "min(100vw, 60rem)" }}
       >
-        Ми вже майже готові до публічного запуску, а поки що ви можете
+        Вже майже готові до публічного запуску, а поки що ви можете
         приєднатися до списку очікування - ми повідомимо вас, як тільки ви
         отримаєте доступ до нашого сервісу.
       </div>
