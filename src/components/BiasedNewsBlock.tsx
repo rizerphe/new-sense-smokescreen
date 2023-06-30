@@ -1,6 +1,6 @@
 "use client";
 import { Flow_Block, Montserrat } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./NewsBlock.module.sass";
 import { IoMdSend } from "react-icons/io";
 import { MdNavigateNext } from "react-icons/md";
@@ -143,14 +143,19 @@ export default function NewsBlock({
 }) {
   const [expanded, setExpanded] = useState(false);
   const [collapsed, setCollapsed] = useState(init_collapsed);
+  const [percentages, setPercentages] = useState<number[]>([0, 0, 0]);
   const full = _full && !collapsed;
 
-  let percentages = [
-    Math.random() + 0.2,
-    Math.random() + 0.2,
-    Math.random() + 0.2,
-  ];
-  percentages = percentages.map((x) => x / percentages.reduce((a, b) => a + b));
+  useEffect(() => {
+    let percentages = [
+      Math.random() + 0.2,
+      Math.random() + 0.2,
+      Math.random() + 0.2,
+    ];
+    setPercentages(
+      percentages.map((x) => x / percentages.reduce((a, b) => a + b))
+    );
+  }, []);
 
   return (
     <div
